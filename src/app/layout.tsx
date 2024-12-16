@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter as Inter } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
+import ViewCanvas from "@/components/ViewCanvas";
 
 const inter = Inter<"--font-inter">({
   variable: "--font-inter",
@@ -25,6 +26,7 @@ export default function RootLayout({
       <body className="overflow-x-hidden bg-yellow-300 font-inter">
         <Header />
         <main>{children}</main>
+        <ViewCanvas />
       </body>
     </html>
   );
