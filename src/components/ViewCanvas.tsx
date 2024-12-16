@@ -15,7 +15,7 @@ export default function ViewCanvas({ }: Props) {
         transform: "translateX(-50%)",
         overflow: "hidden",
         pointerEvents: "none",
-        zIndex: 3000,
+        zIndex: 50,
       }}
       shadows
       camera={{ fov: 30 }}

@@ -1,12 +1,12 @@
 "use client";
 
-import { Bounded } from "@/components/Bounded";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Hero from "@/components/Hero";
 
 export default function Home() {
+
   useGSAP(() => {
     gsap.registerPlugin(ScrollTrigger, useGSAP);
 
@@ -73,9 +73,5 @@ export default function Home() {
       });
   });
 
-  return (
-    <Bounded className="hero opacity-0">
-      <Hero />
-    </Bounded>
-  );
+  return <Hero />;
 }

@@ -1,11 +1,19 @@
 import Button from "@/components/Button";
 import { TextSplitter } from "@/components/TextSplitter";
 import Image from "next/image";
+import { Bounded } from "../Bounded";
+import { View } from "@react-three/drei";
+import Scene from "./Scene";
 
 type Props = {}
 
 export default function Hero({ }: Props) {
   return (
+    <Bounded className="hero opacity-0">
+
+      <View className="hero-scene pointer-events-none sticky top-0 z-0 -mt-[100vh] hidden md:block h-screen w-screen">
+        <Scene />
+      </View>
     <div className="grid">
       <div className="grid h-screen place-items-center">
         <div className="grid auto-rows-min place-items-center text-center">
@@ -26,7 +34,7 @@ export default function Hero({ }: Props) {
         </div>
       </div>
 
-      <div className="text-side relative z-[80] grid h-screen items-center gap-4 md:grid-cols-2">
+        <div className="text-side relative z-[80] grid h-screen items-center gap-4 md:grid-cols-2">
         <Image
           src="/all-cans-bunched.png"
           alt="flavors"
@@ -38,7 +46,7 @@ export default function Hero({ }: Props) {
           <h2 className="text-side-heading text-balance text-6xl font-black uppercase text-sky-950 lg:text-8xl">
             <TextSplitter text="Try all five flavors" />
           </h2>
-          <p className="text-side-body mt-4 max-w-xl text-balance text-xl font-normal text-sky-950">
+            <p className="text-side-body mt-4 max-w-xl text-balance text-xl font-medium text-sky-950">
             Our soda is made of 100% natural ingredients. We have 5 delicious
             flavors to choose from. No artificial sweeteners, no
             preservatives, no artificial colors.
@@ -46,5 +54,6 @@ export default function Hero({ }: Props) {
         </div>
       </div>
     </div>
+    </Bounded>
   )
 }
